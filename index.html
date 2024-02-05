@@ -1,9 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Developer Pages</title>
-    </head>
-    <body>
-        <h2>My Web Page</h2>
-    </body>
+
+<head>
+    <title>An example of Currying</title>
+    <script type="module">
+        import MyComponent from './example.js';
+        customElements.define('my-component', MyComponent);
+    </script>
+</head>
+
+<body>
+    <h2>Example:</h2>
+    <script>
+        const myComponent = document.createElement('my-component');
+        myComponent.name = 'Currying';
+        myComponent.age = 25;
+        document.body.appendChild(myComponent);
+    </script>
+
+
+    <template id="my-paragraph">
+        <style>
+            p {
+                color: white;
+                background-color: #0d24f6;
+                padding: 20px;
+                width: 40%;
+                font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+                animation-name: bounce;
+                animation-duration: 2s;
+                animation-iteration-count: 1;
+                animation-name: bounce;
+                animation-duration: 2s;
+                /* You can adjust the duration as needed */
+                margin: auto;
+            }
+
+            @keyframes bounce {
+
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                40% {
+                    transform: translateY(-60px);
+                }
+
+                60% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            /* @keyframes slidein {
+                from {
+                    margin-left: 100%;
+                    width: 300%;
+                }
+
+                to {
+                    margin-left: 40%;
+                    width: 40%;
+                }
+            } */
+        </style>
+        <p>Component</p>
+        <pre><code>
+           code goes here
+        </code></pre>
+    </template>
+
+    <!-- <script>
+        const template = document.getElementById('my-paragraph');
+        const templateContent = template.content;
+        document.body.appendChild(templateContent.cloneNode(true));
+    </script> -->
+
+</body>
+
 </html>
